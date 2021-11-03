@@ -30,7 +30,7 @@ class Decrypter:
         self.charList = list()
         for i in range(0, len(self.word)):
             self.charList.append(self.word[i])
-        self.alphabetConverted = self.alphabet[self.key:] + self.alphabet[:self.key]
+        self.alphabetConverted = self.alphabet[self.key:] + self.alphabet[:self.key]  # Rotating alphabet
         system("cls")
 
     def caesarencryption(self):
