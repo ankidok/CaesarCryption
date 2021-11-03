@@ -1,4 +1,5 @@
 from os import system
+from time import sleep
 
 
 class Decrypter:
@@ -15,7 +16,16 @@ class Decrypter:
 
     def input(self):
         self.word = input("Enter code: ")
-        self.key = int(input("Enter key: "))
+        while True:
+            system("cls")
+            try:
+                self.key = int(input("Enter key: "))
+                break
+            except ValueError:
+                print("\nPlease enter a number...")
+                sleep(1)
+                system("cls")
+                continue
         self.word = self.word.lower()
         self.charList = list()
         for i in range(0, len(self.word)):
